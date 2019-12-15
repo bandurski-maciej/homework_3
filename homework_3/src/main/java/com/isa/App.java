@@ -19,8 +19,8 @@ public class App {
 
   }
   public Map<String, Long> getLettersStats(List<String> words) {
-    String s = String.join("", words);
-    return Arrays.stream(s.split(""))
+    return Arrays.stream(String.join("", words)
+            .split(""))
             .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
   }
 
